@@ -1,0 +1,96 @@
+/* card */
+.movie-card {
+  position: relative;
+  width: 200px;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* card hover */
+.movie-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* poster image */
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* poster zoom on hover */
+.movie-card:hover .movie-poster {
+  transform: scale(1.1);
+}
+
+/* overlay */
+.movie-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.6),
+    transparent
+  );
+  color: #fff;
+  transform: translateY(40%);
+  transition: transform 0.4s ease;
+}
+
+/* overlay slide up */
+.movie-card:hover .movie-overlay {
+  transform: translateY(0);
+}
+
+/* title */
+.movie-title {
+  font-size: 15px;
+  color: #ffe400;
+  margin: 0 0 4px;
+}
+
+/* meta row */
+.movie-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.movie-rating img {
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* description */
+.movie-desc {
+  font-size: 11px;
+  color: #ccc;
+  line-height: 1.3;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* description reveal */
+.movie-card:hover .movie-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
